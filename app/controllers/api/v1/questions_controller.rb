@@ -21,7 +21,6 @@ module Api
         @question = Question.new
       end
 
-
       # POST /questions or /questions.json
       def create
         @question = Question.new(question_params)
@@ -35,13 +34,12 @@ module Api
 
       # PATCH/PUT /questions/1 or /questions/1.json
       def update
-          if @question.update(question_params)
-            render json: { messages: "user.messages" }
-            render json: QuestionsSerializer.new(@question).serialized_json
+        if @question.update(question_params)
+          render json: { messages: "user.messages" }
+          render json: QuestionsSerializer.new(@question).serialized_json
 
-          else
-            render json: { error: @question.errors.messages }, status: 422
-          end
+        else
+          render json: { error: @question.errors.messages }, status: 422
         end
       end
 
@@ -68,3 +66,4 @@ module Api
       end
     end
   end
+end
