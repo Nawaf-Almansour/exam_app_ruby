@@ -7,7 +7,8 @@ Rails.application.routes.draw do
       resources :tests, param: :uid
       resources :questions
       resources :users
-
+      resources :registrations
+      resources :sing_in
     end
   end
 
