@@ -5,13 +5,11 @@ module Api
 
       # GET /tests or /tests.json
       def index
-        @tests = Test.all
-        render json: TestSerializer.new(@tests).serialized_json
+        render json: TestSerializer.new(tests).serialized_json
       end
 
       # GET /tests/1 or /tests/1.json
       def show
-        test = Test.find_by(id: params[:id])
         render json: TestSerializer.new(test).serialized_json
       end
 
@@ -54,6 +52,16 @@ module Api
       end
 
       private
+
+      # Get all tests
+      def tests
+        @tests ||= Test.all
+      end
+
+      def test
+        @test ||= Test.find_by(id: params[:id])
+      end
+
 
       # Use callbacks to share common setup or constraints between actions.
       def set_test
