@@ -1,27 +1,23 @@
 module Api
   module V1
-class RegistrationsController < ApplicationController
-  protect_from_forgery with: :null_session
-  # GET /api/v1/
-  def new
-    @user = User.new
-  end
+    class RegistrationsController < ApplicationController
 
-  def create
-    @user = User.new(user_params)
-    if @user.save
-      session[:user_id] = @user.id
-      render json: { messages: "Successfully created" }
-    else
-      render json: { error: user.errors.messages }, status: 422
+      def create
+        user = User.create!(email: params['user']['email'],
+                             password: params['user']['password'],
+                             password_confirmation: params['user']['password_confirmation']
+        )
+        if user
+          session[:user_id] = user.id
+          render json: {
+            status: :created,
+            user: user
+          }
+        else
+          render json: { error: user.errors.messages }, status: 500
+        end
+      end
+
     end
-  end
-
-  private
-
-  def user_params
-    render params.require(:user).permit(:email, :password, :password_confirmation)
-  end
-end
   end
 end

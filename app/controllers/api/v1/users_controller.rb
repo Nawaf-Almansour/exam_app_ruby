@@ -11,8 +11,8 @@ module Api
 
       # GET /users/1 or /users/1.json
       def show
-        @users = Test.find_by(id: params[:id])
-        render json: TestSerializer.new(@users).serialized_json
+        @user = Test.find_by(id: params[:id])
+        render json: TestSerializer.new(@user).serialized_json
       end
 
       # GET /users/new

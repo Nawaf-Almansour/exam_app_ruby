@@ -6,7 +6,7 @@ module Api
       # GET /tests or /tests.json
       def index
         @tests = Test.all
-        render json: TestSerializer.new(test).serialized_json
+        render json: TestSerializer.new(@tests).serialized_json
       end
 
       # GET /tests/1 or /tests/1.json
@@ -62,7 +62,7 @@ module Api
 
       # Only allow a list of trusted parameters through.
       def test_params
-        params.require(:test).permit(:uid, :name, :description, :questions_id)
+        params.require(:test).permit(:uid, :name, :description)
       end
     end
   end

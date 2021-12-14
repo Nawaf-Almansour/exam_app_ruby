@@ -62,7 +62,7 @@ module Api
 
       # Only allow a list of trusted parameters through.
       def question_params
-        params.require(:question).permit(:uid, :name, :description, :option, :answer)
+        params.require(:question).permit(:test_id, :uid, :name, :description, :answer ,option: [])
       end
     end
   end
