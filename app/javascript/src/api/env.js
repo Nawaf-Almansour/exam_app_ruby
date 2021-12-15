@@ -1,5 +1,5 @@
-export const URL_LOCAL = "http://192.168.100.40:3003/v1"
-export const URL_LOCAL_PIC = "http://192.168.100.40:3003"
+export const URL_LOCAL = "http://127.0.0.1:3000/api/v1"
+export const URL_LOCAL_PIC = "http://127.0.0.1:3000"
 
 export const  URL_PRODUCTION = "https://api/v1"
 export const URL_PRODUCTION_PIC = "https://api..cloud"

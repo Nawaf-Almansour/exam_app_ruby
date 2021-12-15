@@ -1,30 +1,35 @@
 import React, {useEffect, useState} from 'react'
-import axios from "axios";
+import {getTests} from "../../../api/fetch";
 
 
 
 const Home = () => {
-    const [lists, setLists] = useState();
-    const [loading, setLoading] = useState(true);
+    const [lists, setLists] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+            fetchData().then() ;
 
-        const fetchData = async () =>{
-            setLoading(true);
-            try {
-                const {data: response} = await axios.get('/stuff/to/fetch');
-                setLists(response);
-            } catch (error) {
-                console.error(error.message);
-            }
-            setLoading(false);
+    }, [null]);
+
+    const fetchData = async () =>{
+        setLoading(true);
+        try {
+            const response= await getTests();
+            const data = response.data.data;
+            setLists([...data]);
+        } catch (error) {
+            console.error(error.message);
         }
+        setLoading(true);
+    }
 
-        fetchData();
-    }, [lists,null]);
     return(
+
         <div>
-            <h1>"Home"</h1>
+            {loading ? (
+                <h1>"Home"</h1>
+            ): null}
         </div>
 
     )
