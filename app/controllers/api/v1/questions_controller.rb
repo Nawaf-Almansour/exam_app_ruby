@@ -8,7 +8,7 @@ module Api
       def index
         @questions = Question.all
         render json: QuestionsSerializer.new(@questions).serialized_json
-      end
+        end
 
       # GET /questions/1
       def show

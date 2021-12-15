@@ -1,25 +1,21 @@
 import React from 'react'
 import './App.css'
 import { Route, Switch } from 'react-router-dom'
-// import Login from './Auth/Login'
-// import Register from './Auth/Register'
-// import Forgot from './Auth/Password/Forgot'
-// import Reset from './Auth/Password/Reset'
-
-// import Navbar from './Navbar'
-// import { AuthProvider } from './AuthContext'
-// import ProtectedRoute from './ProtectedRoute'
-// import UnprotectedRoute from './UnprotectedRoute'
+import BaseLayout from '../components/layouts/BaseLayout'
+import About from "./pages/About/About";
+import Test from "./pages/Test/Test";
+import User from "./pages/User/User";
 
 const App = () => {
+
     return(
-        <>
-            {/*<Navbar/>*/}
-            {/*<Switch>*/}
-            {/*    <Route exact path="/" component={q} />*/}
-            {/*    <Route exact path="/q/:slug" component={q} />*/}
-            {/*</Switch>*/}
-        </>
+        <BaseLayout className="cover">
+            <Switch>
+                <Route exact path="/about" component={About} />
+                <Route exact path="/test/:id" component={Test} />
+                <Route exact path="/user/:id" component={User} />
+            </Switch>
+        </BaseLayout>
     )
 }
 
