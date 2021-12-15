@@ -1,6 +1,7 @@
 {
   "name": "exam-app-ruby",
   "private": true,
+  "proxy": "http://localhost:3000",
   "dependencies": {
     "@babel/core": "^7.16.5",
     "@babel/preset-env": "^7.16.5",

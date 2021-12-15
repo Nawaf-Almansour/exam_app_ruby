@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './App.css'
 import { Route, Switch } from 'react-router-dom'
 import BaseLayout from '../components/layouts/BaseLayout'
@@ -6,6 +6,7 @@ import About from "./pages/About/About";
 import Test from "./pages/Test/Test";
 import User from "./pages/User/User";
 import Home from "./pages/Home/Home";
+import axios from "axios";
 
 const App = () => {
 
