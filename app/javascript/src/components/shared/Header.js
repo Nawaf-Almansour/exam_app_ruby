@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import { Route, Link } from 'react-router-dom'
+import {Collapse, Nav, Navbar, NavbarBrand, NavbarText, NavbarToggler, NavItem, NavLink} from "reactstrap";
 
 const Wrapper = styled.nav`
   width: 100%;
@@ -13,86 +13,43 @@ const Wrapper = styled.nav`
   max-width: 100%;
 `
 
-const Container = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1300px;
-`
-
-const Nav = styled.nav`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`
-
-const Left = styled.div`
-  flex-basis: auto;
-  align-self: flex-start !important;
-`
-
-const Right = styled.div`
-  flex-basis: 12%;
-  align-self: flex-end !important;
-  margin-right: 24px;
-  a {
-    color: #fff;
-    text-decoration: none;
-    cursor: pointer
-  }
-`
-
-const Menu = styled.ul`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding:0;
-  margin:0;
-  list-style-type: none;
-`
-
-const Logo = styled.span`
-  font-family: 'Poppins-ExtraBold';
-  font-weight: bold;
-  font-size: 20px;
-  a {
-    font-size: inherit;
-    font-weight: inherit;
-    font-family: inherit;
-    color: #fff;
-    text-decoration: none;
-  }
-`
-
 const Header = (props) => {
     return (
-        <Fragment>
-            { ({ isAuth, logout }) => (
-                <Wrapper>
-                    <Container>
-                        <Nav>
-                            <Left>
-                                <Logo><Link to="/">OpenFlights</Link></Logo>
-                            </Left>
-                            <Right>
-                                <Menu>
-                                    {
-                                        isAuth ?
-                                            <Fragment>
-                                                <li><Link to="/">Home</Link></li>
-                                                <li><a onClick={logout}>Log Out</a></li>
-                                            </Fragment> :
-                                            <Fragment>
-                                                <li><Link to="/login">Login</Link></li>
-                                                <li><Link to="/register">Signup</Link></li>
-                                            </Fragment>
-                                    }
-                                </Menu>
-                            </Right>
-                        </Nav>
-                    </Container>
-                </Wrapper>
-            )}
-        </Fragment>
+    <Navbar
+        color="light"
+        expand="md"
+        light
+    >
+        <NavbarBrand href="/">
+            reactstrap
+        </NavbarBrand>
+        <NavbarToggler onClick={function noRefCheck(){}} />
+        <Collapse navbar>
+            <Nav
+                className="me-auto"
+                navbar
+            >
+                <NavItem>
+                    <NavLink href="/about">
+                        about
+                    </NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink href="/test">
+                        test
+                    </NavLink>
+                </NavItem>
+                <NavItem>
+                    <NavLink href="/user">
+                        user
+                    </NavLink>
+                </NavItem>
+            </Nav>
+            <NavbarText>
+                Exam App
+            </NavbarText>
+        </Collapse>
+    </Navbar>
     )
 }
 
