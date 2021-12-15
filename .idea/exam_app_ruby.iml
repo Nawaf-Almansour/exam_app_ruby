@@ -28,6 +28,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="font-awesome" level="application" />
+    <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actioncable (v6.1.4.1, ruby-2.6.3-p62) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionmailbox (v6.1.4.1, ruby-2.6.3-p62) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="actionmailer (v6.1.4.1, ruby-2.6.3-p62) [gem]" level="application" />
@@ -68,6 +70,7 @@
     <orderEntry type="library" scope="PROVIDED" name="puma (v5.5.2, ruby-2.6.3-p62) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="racc (v1.6.0, ruby-2.6.3-p62) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack (v2.2.3, ruby-2.6.3-p62) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rack-cors (v1.1.1, ruby-2.6.3-p62) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-mini-profiler (v2.3.3, ruby-2.6.3-p62) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-proxy (v0.7.0, ruby-2.6.3-p62) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rack-test (v1.1.0, ruby-2.6.3-p62) [gem]" level="application" />
@@ -93,8 +96,6 @@
     <orderEntry type="library" scope="PROVIDED" name="websocket-driver (v0.7.5, ruby-2.6.3-p62) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="websocket-extensions (v0.1.5, ruby-2.6.3-p62) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="zeitwerk (v2.5.1, ruby-2.6.3-p62) [gem]" level="application" />
-    <orderEntry type="library" name="font-awesome" level="application" />
-    <orderEntry type="library" name="bootstrap" level="application" />
   </component>
   <component name="RModuleSettingsStorage">
     <LOAD_PATH number="0" />

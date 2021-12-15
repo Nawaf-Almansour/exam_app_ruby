@@ -5,15 +5,22 @@ import axios from "axios";
 
 const Home = () => {
     const [lists, setLists] = useState();
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:3000/api/v1/tests.json')
-            .then(response => {
-                console.log(response)
-                setLists(response.data)
-                console.log(lists)
-            })
-            .catch(error => console.log(error))
+
+        const fetchData = async () =>{
+            setLoading(true);
+            try {
+                const {data: response} = await axios.get('/stuff/to/fetch');
+                setLists(response);
+            } catch (error) {
+                console.error(error.message);
+            }
+            setLoading(false);
+        }
+
+        fetchData();
     }, [lists,null]);
     return(
         <div>
